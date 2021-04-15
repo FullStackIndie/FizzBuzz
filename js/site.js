@@ -66,10 +66,7 @@ function displayData(numbers){
 function formatFizzBuzz(value, cols, colIndex){
     if (typeof value === "undefined") {
         value = "";
-    }
-    else if (value % 2 == 0) {
-        cols[colIndex].classList.add("boldIt");
-    } else {
+    }else {
         if (value == `FizzBuzz`) {
             cols[colIndex].classList.add("fizzBuzz");
         }

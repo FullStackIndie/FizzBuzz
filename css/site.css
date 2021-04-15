@@ -171,9 +171,9 @@ background: linear-gradient(to right, #C5796D, #f6e7db);
 
 
 
-.boldIt{
+.normal {
   font-weight: bolder;
-  color: rgb(247, 124, 10);
+  color: #343A40;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font: large;
 }
