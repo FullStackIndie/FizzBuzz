@@ -4,6 +4,7 @@
 <!--
   TODO: Change Title
 -->
+
 <head>
   <title>FizzBuzz</title>
   <!-- Required meta tags -->
@@ -15,13 +16,16 @@
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="/css/site.css">
-<!-- PrismJS -->
-<link rel="stylesheet" href="/css/prismJSFizzBuzz.css"
-<!-- Google Fonts -->
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Courgette&family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/enlighterjs.min.css">
+
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Courgette&family=M+PLUS+Rounded+1c&display=swap"
+    rel="stylesheet">
 
 </head>
 
@@ -32,7 +36,7 @@
       <!--
         TODO: Change Header name
       -->
-      <a class="navbar-brand" href="#">FizzBuzz</a>
+      <a class="navbar-brand" href="index.html">FizzBuzz</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
         aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -62,21 +66,15 @@
   <!-- Begin page content -->
   <main role="main" class="container" id="MainTop-BG">
     <div class="row">
-      <div class="col-9 col-md-9 col-lg-9"><h1>See The Code</h1></div>
-      <div class="col-9 col-md-9 col-lg-9"><p id="Font">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-        laborum.
-      </p> </div>
-      <div class="col-3 col-md-3 col-lg-3"><img class="container-fluid" src="/img/js.png" /></div>
+      <div class="col-9 col-md-9 col-lg-9">
+        <h1>See The Code</h1>
+      </div>
     </div>
 
     <div class="row mt-5 mb-5">
       <div class="col-auto">
         <h6>Take user input and print numbers to the page</h6>
-<pre class="line-numbers"><code class="language-javascript">
+        <pre>
 function printNumbers(){
   let start = parseInt(document.getElementById("numOne").value);
   let end = parseInt(document.getElementById("numTwo").value); 
@@ -84,15 +82,15 @@ function printNumbers(){
   let numbers = getRange(start, end);
 
   displayData(numbers);
-}</code></pre>
+}</pre>
+      </div>
     </div>
-  </div>
 
 
-<div class="row mt-5 mb-5">
-  <div class="col-auto">
-    <h6>Gets the range of numbers within 50,000</h6>
-    <pre class="line-numbers"><code class="language-javascript">
+    <div class="row mt-5 mb-5">
+      <div class="col-auto">
+        <h6>Gets the range of numbers within 50,000</h6>
+        <pre>
 function getRange(start, end){
   if (end > 50_000) {
   alert("End Number Is To High, Cannot Exceed 50,000");
@@ -104,15 +102,15 @@ function getRange(start, end){
   numArray.push(index);
   }
    return numArray;
-}</code>
+}
   </pre>
-    </div>
+      </div>
     </div>
 
-<div class="row mt-5 mb-5">
-  <div class="col-auto">
-    <h6>Display the numbers on the page</h6>
-    <pre class="line-numbers"><code class="language-javascript">
+    <div class="row mt-5 mb-5">
+      <div class="col-auto">
+        <h6>Display the numbers on the page</h6>
+        <pre>
 function displayData(numbers){
   const rowTemplate = document.getElementById("Data-Template");
   const resultsBody = document.getElementById("resultsBody");
@@ -127,15 +125,15 @@ function displayData(numbers){
     let dataRow=rowTemplate.content.cloneNode(true); 
     let cols=dataRow.querySelectorAll("td"); // Returns array of td elements
     findFizzBuzz(numbers, cols, rowIndex) // Add the row to the page resultsBody.appendChild(dataRow); } 
-}</code>
+}
   </pre>
-    </div>
+      </div>
     </div>
 
-<div class="row mt-5 mb-5">
-  <div class="col-auto">
-    <h6>Filter for multiples of 3, 5, or both and add a CSS class to format text and font color</h6>
-    <pre class="line-numbers"><code class="language-javascript">
+    <div class="row mt-5 mb-5">
+      <div class="col-auto">
+        <h6>Filter for multiples of 3, 5, or both and add a CSS class to format text and font color</h6>
+        <pre>
 function findFizzBuzz(numbers, cols, rowIndex){
   for (let colIndex = 0; colIndex < cols.length; colIndex++) { 
     let value=numbers[rowIndex + colIndex]; 
@@ -160,10 +158,75 @@ function findFizzBuzz(numbers, cols, rowIndex){
 } // Note: <td> use textContent to set content
     cols[colIndex].textContent = value;
     }
-  }</code>
+  }
   </pre>
+      </div>
     </div>
+
+
+    <div class="row">
+      <div class="col">
+      <p>Full Source Code Below</p>
+      <hr/>
+        <pre>
+          // Take user input and print numbers to the page
+          function printNumbers(){
+          let start = parseInt(document.getElementById("numOne").value);
+          let end = parseInt(document.getElementById("numTwo").value);
+
+          let numbers = getRange(start, end);
+
+          displayData(numbers);
+          }
+
+          // Gets the range of numbers
+          function getRange(start, end){
+          if (end > 50_000) {
+          alert("End Number Is To High, Cannot Exceed 50,000");
+          return;
+          }
+
+          let newArray = [];
+          for (let index = start; index <= end; index++) { newArray.push(getFizzBuzz(index)); } return newArray; }
+            function getFizzBuzz(num) { let multiple1=document.getElementById("mulOne").value; let
+            multiple2=document.getElementById("mulTwo").value; if (num % multiple1==0 && num % multiple2==0) { return
+            `FizzBuzz`; } else { if (num % multiple1==0) { return `Fizz`; } if (num % multiple2==0) { return `Buzz`; } }
+            return num; } // Display the numbers on the page function displayData(numbers){ const
+            rowTemplate=document.getElementById("Data-Template"); const
+            resultsBody=document.getElementById("resultsBody"); // Clones a template, then filters for all <td>
+            elements, then gets the length
+            let colCount = rowTemplate.content.cloneNode(true).querySelectorAll("td").length;
+            resultsBody.innerHTML = "";
+
+            // Loop over every element in the numbers array
+            // Get the values and write them to the page
+            for (let rowIndex = 0; rowIndex < numbers.length; rowIndex +=colCount) { let
+              dataRow=rowTemplate.content.cloneNode(true); let cols=dataRow.querySelectorAll("td"); // Returns array of
+              td elements for (let colIndex=0; colIndex < cols.length; colIndex++) { let value=numbers[rowIndex +
+              colIndex]; formatFizzBuzz(value, cols, colIndex); // Add the row to the page
+              resultsBody.appendChild(dataRow); } } } function formatFizzBuzz(value, cols, colIndex){ if (typeof
+              value==="undefined" ) { value="" ; }else { if (value==`FizzBuzz`) {
+              cols[colIndex].classList.add("fizzBuzz"); } if (value==`Fizz`) { cols[colIndex].classList.add("fizz"); }
+              if (value==`Buzz`) { cols[colIndex].classList.add("buzz"); } } // Note: <td> use textContent to set
+              content
+              cols[colIndex].textContent = value;
+              }
+
+
+              function changeValue() {
+              let multiple1 = document.getElementById("mulOne").value;
+              let multiple2 = document.getElementById("mulTwo").value;
+              document.getElementById("mulFizz").textContent = `${multiple1} = `;
+              document.getElementById("mulBuzz").textContent = `${multiple2} = `;
+              document.getElementById("mulFizzBuzz").textContent = `${multiple1} & ${multiple2} = `;
+              }
+            </pre>
+      </div>
     </div>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
   </main>
 
   <!--
@@ -171,7 +234,7 @@ function findFizzBuzz(numbers, cols, rowIndex){
   -->
   <footer class="footer" id="Footer-BG">
     <div class="container">
-      <span class="text-muted text-center">FizzBuzz</span>
+      <span class="text-muted text-center">&copy; John Murphy 2021</span>
     </div>
   </footer>
 
@@ -189,8 +252,24 @@ function findFizzBuzz(numbers, cols, rowIndex){
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
   </script>
-  <!-- PrismJS -->
-  <script src="/js/prismJSFizzBuzz.js"></script>
+
+  <script src="/js/enlighterjs.min.js"></script>
+
+  <script>
+    // INIT CODE - simple page-wide initialization based on css selectors
+    // - highlight all pre + code tags (CSS3 selectors)
+    // - use javascript as default language
+    // - use theme "enlighter" as default theme
+    // - replace tabs with 2 spaces
+    EnlighterJS.init('pre', 'code', {
+      language: 'javascript',
+      theme: 'enlighter',
+      indent: 2
+    });
+  </script>
+
+
+
 </body>
 
 </html>
