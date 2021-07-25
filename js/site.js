@@ -1,15 +1,15 @@
 // Take user input and print numbers to the page
-function printNumbers(){
+function printNumbers() {
     let start = parseInt(document.getElementById("numOne").value);
-    let end = parseInt(document.getElementById("numTwo").value); 
+    let end = parseInt(document.getElementById("numTwo").value);
 
     let numbers = getRange(start, end);
 
-     displayData(numbers);
+    displayData(numbers);
 }
 
 // Gets the range of numbers
-function getRange(start, end){
+function getRange(start, end) {
     if (end > 50_000) {
         alert("End Number Is To High, Cannot Exceed 50,000");
         return;
@@ -27,9 +27,7 @@ function getFizzBuzz(num) {
     let multiple2 = document.getElementById("mulTwo").value;
     if (num % multiple1 == 0 && num % multiple2 == 0) {
         return `FizzBuzz`;
-    } 
-    else
-    {
+    } else {
         if (num % multiple1 == 0) {
             return `Fizz`;
         }
@@ -41,7 +39,7 @@ function getFizzBuzz(num) {
 }
 
 // Display the numbers on the page
-function displayData(numbers){
+function displayData(numbers) {
     const rowTemplate = document.getElementById("Data-Template");
     const resultsBody = document.getElementById("resultsBody");
     // Clones a template, then filters for all <td> elements, then gets the length
@@ -53,7 +51,7 @@ function displayData(numbers){
     for (let rowIndex = 0; rowIndex < numbers.length; rowIndex += colCount) {
         let dataRow = rowTemplate.content.cloneNode(true);
         let cols = dataRow.querySelectorAll("td"); // Returns array of td elements
-        
+
         for (let colIndex = 0; colIndex < cols.length; colIndex++) {
             let value = numbers[rowIndex + colIndex];
             formatFizzBuzz(value, cols, colIndex);
@@ -63,10 +61,10 @@ function displayData(numbers){
     }
 }
 
-function formatFizzBuzz(value, cols, colIndex){
+function formatFizzBuzz(value, cols, colIndex) {
     if (typeof value === "undefined") {
         value = "";
-    }else {
+    } else {
         if (value == `FizzBuzz`) {
             cols[colIndex].classList.add("fizzBuzz");
         }
