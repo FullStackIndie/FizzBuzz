@@ -1,4 +1,4 @@
-name: Build from Github, Deploy to Linux
+name: Build from Github, Deploy to Linux A2Server
 
 on:
   push:
