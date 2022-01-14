@@ -17,7 +17,7 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.REMOTE_PORT }}
         rm: true
-        source: "/home/runner/work/Portfolio/Portfolio/"
+        source: "/home/runner/work/FizzBuzz/FizzBuzz/"
         target: "${{ secrets.REMOTE_DIR }}"
 
 
